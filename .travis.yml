@@ -4,10 +4,6 @@ php:
   - 5.4
   - 5.5
 
-matrix:
-  allow_failures:
-    - php: 5.5
-
 before_script:
   # install composer and vendors
   - curl -s http://getcomposer.org/installer | php
@@ -15,6 +11,9 @@ before_script:
 
   # install Pear dependencies
   - pyrus install pear/PHP_CodeSniffer
+
+  # install scrutinizer-ci
+  wget https://scrutinizer-ci.com/ocular.phar
 
   - phpenv rehash
 
@@ -25,3 +24,7 @@ script:
 
 after_script:
   - php vendor/bin/coveralls --env=test
+
+  # scrutinizer-ci
+  phpunit --coverage-clover=build/logs/coverage.clover
+  php ocular.phar code-coverage:upload --format=php-clover build/logs/coverage.clover
