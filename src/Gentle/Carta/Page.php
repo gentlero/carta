@@ -49,6 +49,13 @@ class Page implements PageInterface
      */
     protected $meta = array();
 
+    /**
+     * @param  string                    $file
+     * @param  ParserInterface           $parser
+     * @return self
+     *
+     * @throws \InvalidArgumentException
+     */
     public function __construct($file, ParserInterface $parser)
     {
         if (!is_file($file)) {

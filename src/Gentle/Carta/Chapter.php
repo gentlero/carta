@@ -33,6 +33,14 @@ class Chapter implements ChapterInterface
      */
     protected $pages = array();
 
+    /**
+     * @access public
+     * @param  string          $path
+     * @param  ParserInterface $parser
+     * @return self
+     *
+     * @throws \InvalidArgumentException
+     */
     public function __construct($path, ParserInterface $parser)
     {
         if (!is_dir($path)) {

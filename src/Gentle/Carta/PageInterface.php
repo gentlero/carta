@@ -16,6 +16,10 @@ namespace Gentle\Carta;
  */
 interface PageInterface
 {
+    /**
+     * @access public
+     * @return string
+     */
     public function getContent();
 
     /**
