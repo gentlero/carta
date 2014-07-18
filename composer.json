@@ -1,0 +1,32 @@
+{
+    "name":         "gentle/carta",
+    "type":         "library",
+    "description":  "Simple way to transform different markup languages to HTML.",
+    "homepage":     "http://www.gentle.ro",
+    "keywords":     ["markup", "markdown", "reStructuredText"],
+    "license":      "MIT",
+    "authors": [
+        {
+            "name":     "Alexandru G.",
+            "email":    "alex@gentle.ro",
+            "homepage": "http://www.sebi.me"
+        }
+    ],
+    "require": {
+        "php":                  ">=5.3",
+        "symfony/yaml":         "v2.5.2",
+        "michelf/php-markdown": "1.4.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit":      "3.7.*",
+        "mikey179/vfsStream":   "v1.2.0"
+    },
+    "suggests": {
+      "gregwar/rst": "Offers support for reStructuredText."
+    },
+    "autoload": {
+        "psr-0": {
+            "Gentle\\Carta": "src/"
+        }
+    }
+}
