@@ -1,10 +1,9 @@
 <?php
 
-namespace Gentle\Carta;
+namespace Gentle\Tests\Carta;
 
-use Gentle\Carta\Parser\MarkdownParser;
-use org\bovigo\vfs\vfsStream;
-use org\bovigo\vfs\vfsStreamDirectory;
+use Gentle\Carta\Chapter;
+use Gentle\Carta\ChapterInterface;
 
 class ChapterTest extends TestCase
 {
@@ -32,4 +31,4 @@ class ChapterTest extends TestCase
     {
         new Chapter('invalid/path', $this->parser);
     }
-} 
+}

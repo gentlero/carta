@@ -1,6 +1,6 @@
 <?php
 
-namespace Gentle\Carta;
+namespace Gentle\Tests\Carta;
 
 use Gentle\Carta\Parser\MarkdownParser;
 use Gentle\Carta\Parser\ParserInterface;

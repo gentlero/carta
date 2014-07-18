@@ -1,10 +1,9 @@
 <?php
 
-namespace Gentle\Carta;
+namespace Gentle\Tests\Carta;
 
-use Gentle\Carta\Parser\MarkdownParser;
-use org\bovigo\vfs\vfsStream;
-use org\bovigo\vfs\vfsStreamFile;
+use Gentle\Carta\Page;
+use Gentle\Carta\PageInterface;
 
 class PageTest extends TestCase
 {

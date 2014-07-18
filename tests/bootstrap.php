@@ -14,4 +14,4 @@ EOM;
     exit(1);
 }
 
-$loader->add('Gentle\Carta', __DIR__);
+$loader->add('Gentle\Tests\Carta', __DIR__);

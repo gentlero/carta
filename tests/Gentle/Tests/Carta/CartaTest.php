@@ -1,10 +1,9 @@
 <?php
 
-namespace Gentle\Carta;
+namespace Gentle\Tests\Carta;
 
+use Gentle\Carta\Carta;
 use Gentle\Carta\Parser\MarkdownParser;
-use org\bovigo\vfs\vfsStream;
-use org\bovigo\vfs\vfsStreamDirectory;
 
 class CartaTest extends TestCase
 {
@@ -50,4 +49,4 @@ class CartaTest extends TestCase
     {
         $this->assertInstanceOf('\Gentle\Carta\ChapterInterface', $this->carta->open('.'));
     }
-} 
+}
