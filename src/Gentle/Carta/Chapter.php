@@ -65,10 +65,9 @@ class Chapter implements ChapterInterface
 
         foreach ($items as $file) {
             /** @var \DirectoryIterator $file */
-            if (
-                $file->isFile() &&
-                in_array('.'.$file->getExtension(), $this->parser->getExtensions()))
-            {
+            if ($file->isFile() &&
+                in_array('.'.$file->getExtension(), $this->parser->getExtensions())
+            ) {
                 $this->pages[] = new Page($file->getPathname(), $this->parser);
             }
         }

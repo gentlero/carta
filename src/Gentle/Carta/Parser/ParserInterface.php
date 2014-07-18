@@ -40,4 +40,4 @@ interface ParserInterface
      * @return string
      */
     public function transform($data);
-} 
+}

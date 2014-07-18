@@ -21,4 +21,4 @@ interface ChapterInterface
      * @return PageInterface[]
      */
     public function getPages();
-} 
+}

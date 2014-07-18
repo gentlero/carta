@@ -43,4 +43,4 @@ class MarkdownParser implements ParserInterface
     {
         return array('.md', '.mdown', '.markdown');
     }
-} 
+}

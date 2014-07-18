@@ -43,4 +43,4 @@ class RestructuredTextParser implements ParserInterface
     {
         return array('.rst');
     }
-} 
+}
