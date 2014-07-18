@@ -1,4 +1,4 @@
-# Carta library
+# Carta library [![Build Status](https://travis-ci.org/gentlero/carta.svg?branch=develop)](https://travis-ci.org/gentlero/carta) [![Coverage Status](https://coveralls.io/repos/gentlero/carta/badge.png?branch=develop)](https://coveralls.io/r/gentlero/carta?branch=develop)
 
 Carta offers a simple way to transform different markup languages to HTML (*the irony*). For the moment
 it supports Markdown and reStructuredText.
