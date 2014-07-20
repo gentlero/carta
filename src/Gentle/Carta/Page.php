@@ -50,8 +50,8 @@ class Page implements PageInterface
     protected $meta = array();
 
     /**
-     * @param  string                    $file
-     * @param  ParserInterface           $parser
+     * @param  string          $file
+     * @param  ParserInterface $parser
      * @return self
      *
      * @throws \InvalidArgumentException
@@ -104,29 +104,41 @@ class Page implements PageInterface
     }
 
     /**
+     * @access public
+     * @return bool
+     */
+    public function hasYamlHeader()
+    {
+        return (preg_match('/\A-{3,}\r?\n/', $this->source) === 1);
+    }
+
+    /**
      * Extract meta tags and content
+     *
+     * Yaml header MUST be delimited by 3 dashes minimum
+     *
+     * <example>
+     * ---
+     * key1: value
+     * key2: value1, value2
+     * ---
+     * </example>
      *
      * @access protected
      * @return bool
      */
     protected function parseFile()
     {
-        /**
-         * Extract file header
-         *
-         * header MUST be delimited by 3 dashes minimum
-         *
-         * <example>
-         * ---
-         * key1: value
-         * key2: value1, value2
-         * ---
-         * </example>
-         */
-        preg_match("/-{3,}(.*?)-{3,}/ms", $this->source, $match);
+        if (!$this->hasYamlHeader()) {
+            $this->content = $this->source;
+
+            return true;
+        }
 
         try {
-            $this->meta     = Yaml::parse($match[1]);
+            preg_match("/-{3,}(.*?)-{3,}/ms", $this->source, $parts);
+
+            $this->meta     = Yaml::parse($parts[1]);
             $this->content  = preg_replace("/-{3,}(.*?)-{3,}/ms", "", $this->source);
 
             return true;
