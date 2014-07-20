@@ -31,6 +31,13 @@ class PageTest extends TestCase
         $this->assertEquals('<p>the content</p>', trim($page->getContent()));
     }
 
+    public function testGetHtmlContentWithInvalidYamlHeader()
+    {
+        file_put_contents($this->file2, '\ntitle: asd\nthe content');
+        $page = new Page($this->file2, $this->parser);
+        $this->assertEquals('<p>\ntitle: asd\nthe content</p>', trim($page->getContent()));
+    }
+
     public function testGetMetaTags()
     {
         $this->assertEquals(
